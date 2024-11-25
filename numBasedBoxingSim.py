@@ -11,7 +11,7 @@ contact_delay = 0.6
 rel_punch_freq = [(1, 10), (2, 3), (3, 4), ("OH", 3)]
 punch_selection = list(itertools.chain.from_iterable([[punch for i in range(freq)] for punch, freq in rel_punch_freq]))
 
-Combos = [(1, 2, 3), (1, 2, 9), (9, 3), (1, 1, 2), (1, 2, "OH", 3), (1, "OH")]
+Combos = [(1, 2, 3), (1, 2), (1, 1, 2), (1, 2, "OH", 3), (1, "OH")]
 
 def show_punch(punch, interval):
     print(str(punch))
@@ -20,7 +20,7 @@ def show_punch(punch, interval):
     time.sleep(interval-contact_delay)
 
 print("\nBEGINNING SIMULATION\n")
-print("1=Jab\n2=Cross\n3=Lead Hook\n9=Lead Body Hook\nOH=Overhand Right")
+print("<---------------->\n1=Jab\n2=Cross\n3=Lead Hook\n5=Lead Uppercut\n6=Rear Uppercut\nOH=Overhand Right\n<---------------->\n")
 print(f"Punch number will show {str(contact_delay)} seconds before landing.\nThe asterisk (*) means the punch conntected.")
 while True:
     if random.random() > (1-combo_chance):
