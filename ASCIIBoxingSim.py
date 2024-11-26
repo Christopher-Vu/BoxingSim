@@ -4,7 +4,7 @@ import itertools
 from boxingascii import frames
 
 combo_chance = 0.1
-punch_chance = 0.3
+punch_chance = 0.2
 reg_interval = 1
 combo_interval = 1
 contact_delay = 0.8
@@ -20,7 +20,6 @@ def show_punch(punch, interval):
     for frame in frames[str(punch)]:
         print(frame)
         time.sleep(contact_delay / len(frames[str(punch)]))
-    time.sleep(interval-contact_delay)
 
 print("BOXING SIMULATION\n")
 print("<--------PUNCH NUMBERS-------->\n1=Jab\n2=Cross\n3=Lead Hook\n5=Lead Uppercut\n6=Rear Uppercut\nOH=Overhand Right\n<---------------------------->\n")
