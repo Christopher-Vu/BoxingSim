@@ -1,4 +1,4 @@
-#Boxing Simulator
+# Boxing Simulator
 <hr>
 ## Summary
 Run ASCIIBoxingSim.py for the visual boxing simulator (where an ascii character throws randomized punches at you based on your settings). Run numBasedBoxingSim.py if you just want the numbers and not the full visual.
