@@ -34,6 +34,9 @@ Combos = ["1-Pull-3", "9-3", "Pull-2-3", "Slip-6-3"]
 kicks = ["Teep", "Thigh Teep", "Roundhouse", "Switch Kick", "Fake teep, Roundhouse", "Fake teep, Switch"]
 outside_movement = ["Drop Step", "Circle Right", "Circle Left", "L-Step", "Reverse L-Step"]
 
+def print_action(action):
+    print(action)
+
 print("\nBEGINNING WORKOUT\n")
 for i in range(starting_delay):
     print(f"{starting_delay-i}...")
@@ -43,29 +46,29 @@ while True:
     if current_range == "boxing":
         if random.random() > (1-boxing_to_kicking_chance):
             current_range = "kicking"
-            print("Back up to kicking range")
+            print_action("Back up to kicking range")
             time.sleep(range_interval)
         elif random.random() > (1-combo_chance):
-            print(random.choice(Combos))
+            print_action(random.choice(Combos))
             time.sleep(combo_interval)
         elif random.random() > (1-punch_chance):
-            print(random.choice(punch_selection))
+            print_action(random.choice(punch_selection))
             time.sleep(punch_interval)
         elif random.random() > (1-movement_chance):
-            print(random.choice(inside_movements))
+            print_action(random.choice(inside_movements))
             time.sleep(inside_movement_interval)
         else:
             time.sleep(boxing_interval)
     if current_range == "kicking":
         if random.random() > (1-kicking_to_boxing_chance):
             current_range = "boxing"
-            print("Close in to boxing range")
+            print_action("Close in to boxing range")
             time.sleep(range_interval)
         elif random.random() > (1-kick_chance):
-            print(random.choice(kicks))
+            print_action(random.choice(kicks))
             time.sleep(kick_interval)
         elif random.random() > (1-movement_chance):
-            print(random.choice(outside_movement))
+            print_action(random.choice(outside_movement))
             time.sleep(outside_movement_interval)
         else:
             time.sleep(kicking_interval)
